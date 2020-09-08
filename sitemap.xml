@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/Ubuntu18%E4%B8%8Agit%E5%92%8Cgithub%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2020-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/Archlinux%E5%8F%8C%E6%98%BE%E5%8D%A1%E5%AE%89%E8%A3%85NVIDIA%E9%97%AD%E6%BA%90%E9%A9%B1%E5%8A%A8/</loc>
+    
+    <lastmod>2020-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/wsl%E5%AE%89%E8%A3%85Arch%20Linux%E5%B9%B6%E7%BB%99%E5%85%B6%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%83%8F%E7%95%8C%E9%9D%A2/</loc>
+    
+    <lastmod>2020-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/Ubuntu18-10%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/</loc>
+    
+    <lastmod>2020-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E5%87%A0%E5%8D%81%E6%AC%A1%E5%9D%91%E7%9A%84%E7%BB%8F%E9%AA%8C/</loc>
+    
+    <lastmod>2020-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/arch%E4%B8%ADwps%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87/</loc>
+    
+    <lastmod>2020-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/sublime-text3%E4%BB%A3%E7%A0%81%E5%87%BA%E7%8E%B0%E7%99%BD%E6%A1%86/</loc>
+    
+    <lastmod>2020-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/tags/index.html</loc>
+    
+    <lastmod>2020-09-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/categories/index.html</loc>
+    
+    <lastmod>2020-09-08</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://joakimstarr.gitee.io/blog/Gallery/index.html</loc>
     
     <lastmod>2020-09-08</lastmod>
@@ -22,41 +85,6 @@
     
   </url>
   
-  <url>
-    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E5%87%A0%E5%8D%81%E6%AC%A1%E5%9D%91%E7%9A%84%E7%BB%8F%E9%AA%8C/</loc>
-    
-    <lastmod>2020-09-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/Ubuntu18-10%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/</loc>
-    
-    <lastmod>2020-09-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/arch%E4%B8%ADwps%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87/</loc>
-    
-    <lastmod>2020-09-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/wsl%E5%AE%89%E8%A3%85Arch%20Linux%E5%B9%B6%E7%BB%99%E5%85%B6%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%83%8F%E7%95%8C%E9%9D%A2/</loc>
-    
-    <lastmod>2020-09-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://joakimstarr.gitee.io/blog/2020/09/09/sublime-text3%E4%BB%A3%E7%A0%81%E5%87%BA%E7%8E%B0%E7%99%BD%E6%A1%86/</loc>
-    
-    <lastmod>2020-09-08</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>https://joakimstarr.gitee.io/blog</loc>
@@ -67,6 +95,41 @@
 
   
   <url>
+    <loc>https://joakimstarr.gitee.io/blog/tags/Arch-Linux-%E6%98%BE%E5%8D%A1-NVIDIA/</loc>
+    <lastmod>2020-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/tags/Ubuntu-Linux-%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
+    <lastmod>2020-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/tags/Ubuntu-git-github/</loc>
+    <lastmod>2020-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/tags/arch-linux-wps-office-linux/</loc>
+    <lastmod>2020-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/tags/sublime-text3/</loc>
+    <lastmod>2020-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://joakimstarr.gitee.io/blog/tags/Ubuntu-Linux-%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2020-09-08</lastmod>
     <changefreq>daily</changefreq>
@@ -74,5 +137,26 @@
   </url>
   
 
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/categories/Arch/</loc>
+    <lastmod>2020-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/categories/Ubuntu/</loc>
+    <lastmod>2020-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/blog/categories/%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
+    <lastmod>2020-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>

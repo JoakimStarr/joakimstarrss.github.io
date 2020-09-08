@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Ubuntu18上git和github连接配置</title>
+      <link href="/blog/2020/09/09/Ubuntu18%E4%B8%8Agit%E5%92%8Cgithub%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE/"/>
+      <url>/blog/2020/09/09/Ubuntu18%E4%B8%8Agit%E5%92%8Cgithub%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/blog/assets/css/APlayer.min.css"><script src="/blog/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>为了避免我每次重装后都要安装git，然后去网络上找安装资源，于是我便把这些步骤写下来</p><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>首先得安装git</p><blockquote><p><code>sudo apt install git</code></p></blockquote><p>安装成功后配置，连接github <strong>UserName和YouEmail为自己的昵称和邮箱</strong></p><blockquote><p><code>git config --global user.name  UserName</code><br><code>git config --global user.email YouEmail</code> </p></blockquote><p>然后为github添加SSH-Keys<br>生成Kers</p><blockquote><p><code>ssh-keygen -t rsa -C &#39;YouEmail&#39;    </code></p></blockquote><p>然后默认回车就好</p><blockquote><p><code>cat ~/.ssh/id_rsa.pub</code></p></blockquote><p>将显示的内容全部复制<br>登录 github-&gt; Settings-&gt; SSH and GPG Keys-&gt; New SSH key 添加<br> 测试是否添加成功</p><blockquote><p><code>ssh -T git@github.com</code></p></blockquote><p>然后显示如下就表示成功了</p><blockquote><p><code>Hi (You name)! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu git github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Archlinux双显卡安装NVIDIA闭源驱动</title>
+      <link href="/blog/2020/09/09/Archlinux%E5%8F%8C%E6%98%BE%E5%8D%A1%E5%AE%89%E8%A3%85NVIDIA%E9%97%AD%E6%BA%90%E9%A9%B1%E5%8A%A8/"/>
+      <url>/blog/2020/09/09/Archlinux%E5%8F%8C%E6%98%BE%E5%8D%A1%E5%AE%89%E8%A3%85NVIDIA%E9%97%AD%E6%BA%90%E9%A9%B1%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/blog/assets/css/APlayer.min.css"><script src="/blog/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Archlinux双显卡安装NVIDIA闭源驱动"><a href="#Archlinux双显卡安装NVIDIA闭源驱动" class="headerlink" title="Archlinux双显卡安装NVIDIA闭源驱动"></a>Archlinux双显卡安装NVIDIA闭源驱动</h1><p><strong>原文：<a href="https://www.cnblogs.com/tonyc/p/7732119.html">https://www.cnblogs.com/tonyc/p/7732119.html</a></strong></p><p>Ubuntu的prime-select命令可以说很好用了，但是Ubuntu 18.04里面把这个改了，想让它正常工作还得配置一番，相比之下还是Arch的稍微简单一些。<br>这里介绍使用Bumblebee的方法进行安装，参考Installing Bumblebee with Intel/NVIDIA的内容。</p><h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p>确保能正常进入桌面，安装必要的软件包</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S bumblebee bbswitch</span><br></pre></td></tr></table></figure><p>把用户添加到bumblebee组里</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gpasswd -a username bumblebee    //把username换成自己的用户名</span><br></pre></td></tr></table></figure><p>启动bumblebeed服务</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> bumblebeed.service</span><br></pre></td></tr></table></figure><p>安装依赖</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S bumblebee nvidia opencl-nvidia lib32-nvidia-utils lib32-opencl-nvidia mesa lib32-mesa-libgl xf86-video-intel</span><br></pre></td></tr></table></figure><p>lib32打头的需要开启multilib，把/etc/pacman.conf文件中的下面两行取消注释，然后执行pacman -Sy</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#[multilib]</span></span><br><span class="line"><span class="comment">#Include = /etc/pacman.d/mirrorlist</span></span><br></pre></td></tr></table></figure><p>配置bumblebee</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/bumblebee/bumblebee.conf</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##指定nvidia</span></span><br><span class="line">Driver=nvidia</span><br><span class="line"><span class="comment">##电源管理指定bbswitch</span></span><br><span class="line">[driver-nvidia]</span><br><span class="line">PMMethod=bbswitch</span><br></pre></td></tr></table></figure><p>弄好之后重启</p><p>检测是否安装成功<br>安装测试软件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pacman -S virtualgl</span><br></pre></td></tr></table></figure><p>运行测试软件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ optirun glxspheres64</span><br></pre></td></tr></table></figure><p>运行效果<br><img src="https://images2017.cnblogs.com/blog/702421/201710/702421-20171025201048410-1016375763.png" alt=""></p><p>开启和关闭NVIDIA显卡<br>查看状态<br>使用nvidia-smi命令可以查看NVIDIA显卡是否已经启动,如果启动了会显示这样的信息<br><img src="https://images2017.cnblogs.com/blog/702421/201710/702421-20171025204216691-326256054.png" alt=""></p><p>开启</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo tee /proc/acpi/bbswitch &lt;&lt;&lt; ON</span><br></pre></td></tr></table></figure><p>关闭</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo tee /proc/acpi/bbswitch &lt;&lt;&lt; OFF</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Arch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Arch Linux 显卡 NVIDIA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安装Ubuntu的几十次坑的经验</title>
+      <link href="/blog/2020/09/09/%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E5%87%A0%E5%8D%81%E6%AC%A1%E5%9D%91%E7%9A%84%E7%BB%8F%E9%AA%8C/"/>
+      <url>/blog/2020/09/09/%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E5%87%A0%E5%8D%81%E6%AC%A1%E5%9D%91%E7%9A%84%E7%BB%8F%E9%AA%8C/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/blog/assets/css/APlayer.min.css"><script src="/blog/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="分享安装Ubuntu的几十次坑的经验"><a href="#分享安装Ubuntu的几十次坑的经验" class="headerlink" title="分享安装Ubuntu的几十次坑的经验"></a>分享安装Ubuntu的几十次坑的经验</h2><h2 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;曾经有一段时间我安装了一个双系统，win10和centos7，安装成功后没什么大问题，只是centos7的引导出现了问题，每次打开必须进入到启动菜单项，所以我基本上都是在用win10，centos7几乎没有用到。在某一天，我和一个朋友聊天时候突然意识到，如果要适应Linux的操作环境，就必须舍弃掉Windows，因为还是学生，都是想一出就做一出，所以呢当即我就去做了一个Ubuntu启动盘，准备开始投入Linux的怀抱当中，至于为什么选择Ubuntu呢，而不是centos7呢。可能当时安装过centos7，一些显卡上的原因导致界面清晰度不足，由于当时基本上都是在使用win，所以呢，也就没有去找原因和去解决，有了一个坏印象，又因为当时那个朋友正在使用Ubuntu，所以我并选择了Ubuntu.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我在安装的时候遇到了各种各样的问题，都几乎让我感到崩溃。百度上原因，好多都是相同类型的文章，大都无法令我的问题解决，或者是解决了又出来新的问题，例如grub引导失败、开机卡死、开不了机等等。以至于我当时安装了几十次。一次次遇到的问题，一次次的重装，让我从刚开始连机都开不了到最后打开了界面，但可能因为我电脑的原因，导致在安装成功后还能遇到各种各样的问题。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我遇到的问题很多，但是呢，我并不是都一一解决的，可能有些时候靠了一点运气成分，不知不觉就解决了，所以我只分享几个我已经知道问题解决的方法。希望对你有所帮助<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>注意</strong>：我只讲发生问题和解决的办法，并不提供安装教程，如果还没安装的，可以自行百度。我使用rufus制作的启动盘，因为我使用软通牒的出了好几次问题，偶然间看到一个论坛里面有人说使用这个官方的可以解决很多问题，于是我便换了工具，<br>工具/iso下载地址：rufus：<a href="https://rufus.ie/">https://rufus.ie/</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu18.04：<a href="https://www.ubuntu.com/download/desktop">https://www.ubuntu.com/download/desktop</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu16.04：</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中科大源<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mirrors.ustc.edu.cn/ubuntu-releases/16.04/">http://mirrors.ustc.edu.cn/ubuntu-releases/16.04/</a>　<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阿里云开源镜像站<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mirrors.aliyun.com/ubuntu-releases/16.04/">http://mirrors.aliyun.com/ubuntu-releases/16.04/</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;兰州大学开源镜像站<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mirror.lzu.edu.cn/ubuntu-releases/16.04/">http://mirror.lzu.edu.cn/ubuntu-releases/16.04/</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京理工大学开源<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mirror.bit.edu.cn/ubuntu-releases/16.04/">http://mirror.bit.edu.cn/ubuntu-releases/16.04/</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙江大学<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  <a href="http://mirrors.zju.edu.cn/ubuntu-releases/16.04/">http://mirrors.zju.edu.cn/ubuntu-releases/16.04/</a></p><h2 id="2、grub引导失败"><a href="#2、grub引导失败" class="headerlink" title="2、grub引导失败"></a>2、grub引导失败</h2><p><strong>原因：</strong> 无法将grub-efi-amd64-signed软件包安装到/target/，如果没有GRUB启动引导器，所安装的系统将无法启动<br><strong>叙述：</strong> 这个问题是最让我头疼的，当初安装双系统的时候就遇到过这样的问题，centos7也遇到过，当初没有解决，所以centos7打开的时候只能每次都从启动菜单中选择启动。但是Ubuntu不一样了，我每次遇到这个情况，都是注定打开不了系统的，所以这个问题当初是让我最烦的。<br><strong>解决：</strong> 最简单的解决方法就是打开BIOS，将传统启动方式打开（我的是hp，所以叫这个名字），开机选择启动项，会出现两个U盘启动方式，一是带UEFI的，一种则没有，选择没有的启动就问题解决了</p><h1 id="安装的时候卡主不动"><a href="#安装的时候卡主不动" class="headerlink" title="安装的时候卡主不动"></a>安装的时候卡主不动</h1><p><strong>原因：</strong> </p><p><strong>叙述：</strong> 这个问题是最让我头疼的，当初安装双系统的时候就遇到过这样的问题，centos7也遇到过，当初没有解决，所以centos7打开的时候只能每次都从启动菜单中选择启动。但是Ubuntu不一样了，我每次遇到这个情况，都是注定打开不了系统的，所以这个问题当初是让我最烦的。<br><strong>解决：</strong> 最简单的解决方法就是打开BIOS，将传统启动方式打开（我的是hp，所以叫这个名字），开机选择启动项，会出现两个U盘启动方式，一是带UEFI的，一种则没有，选择没有的启动就问题解决了</p><h1 id="进入界面后或者登录成功后卡主不动"><a href="#进入界面后或者登录成功后卡主不动" class="headerlink" title="进入界面后或者登录成功后卡主不动"></a>进入界面后或者登录成功后卡主不动</h1><p><strong>原因:</strong> 可能是因为显卡驱动的问题<br><strong>叙述:</strong> 这个问题也是我最头痛的问题之一,没错安装好系统,,开开心心的打开系统,发现每次登陆成功后等会卡在界面上,我安装成功的完好心情又被破坏了,然后重装,,,,<br><strong>解决:</strong> 在开机时在选择界面停留按’e’键,找到’<code>quite</code>‘后面加上<code>&#39;nouveau.modeset=0&#39;,</code>按Ctrl+X启动,临时解决,<br>        <strong>永久解决:</strong><br>        1，开机成功后打开/boot/grub/grub.cfg文件,找到’quite’后加入’nouveau.modeset=0’或者安装显卡驱动,<br>        2，成功进入页面后安装NVIDIA显卡驱动，可以直接去软件更新器里面的附加驱动，选择显卡驱动，选择NVIDIA，<br>            还有就是命令行安装，使用源安装的话，就需要添加NVIDIA源，这个可以去网上找，也可以直接安装Ubuntu默认的NVIDIA显卡，在命令行输入<code>Ubuntu-driver autoinstall</code>安装成功重启就好了</p><h1 id="安装成功后不进行引导选项菜单"><a href="#安装成功后不进行引导选项菜单" class="headerlink" title="安装成功后不进行引导选项菜单"></a>安装成功后不进行引导选项菜单</h1><p><strong>原因：</strong> 应该是因为电脑上只有一个系统，所以为了开机快速，就直接跳过这个了吧，<br><strong>叙述：</strong> 曾经的我一度认为这是我电脑出来问题了，然后重装了n次，后面才终于找到解决方法<br><strong>解决：</strong> 再开机的时候狂按<code>shift</code>键，就好了<br>如何这样还是没有解决，就进入终端模式，编辑<code>/etc/default/grub </code>，将<code>GRUB_TIMEOUT=0</code>修改为<code>GRUB_TIMEOUT=10</code>就好了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu Linux 安装 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu18.10网易云音乐无法启动</title>
+      <link href="/blog/2020/09/09/Ubuntu18-10%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/"/>
+      <url>/blog/2020/09/09/Ubuntu18-10%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/blog/assets/css/APlayer.min.css"><script src="/blog/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>sudo vim  /etc/sudoers<br>加上（USERNAME为自己的登录名）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USERNAME  ALL &#x3D; NOPASSWD: &#x2F;usr&#x2F;bin&#x2F;netease-cloud-music</span><br></pre></td></tr></table></figure><pre><code>sudo vim  /usr/share/applications/netease-cloud-music.desktop</code></pre><p>修改</p><pre><code>Exec=netease-cloud-music %U </code></pre><p>为</p><pre><code> Exec=sudo netease-cloud-music %U</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Ubuntu </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu Linux 网易云音乐 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>arch中wps无法输入中文</title>
+      <link href="/blog/2020/09/09/arch%E4%B8%ADwps%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87/"/>
+      <url>/blog/2020/09/09/arch%E4%B8%ADwps%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/blog/assets/css/APlayer.min.css"><script src="/blog/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>通过编辑/usr/bin/wps在文件中添加如下两行代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">&quot;@im=fcitx&quot;</span></span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=<span class="string">&quot;fcitx&quot;</span></span><br></pre></td></tr></table></figure><p>在编辑/usr/bin/wpp /usr/bin/et<br>添加如上代码</p><p>保存退出，重启电脑</p><p><strong>注: 如果还未成功可以试试下列做法</strong></p><p>输入<code>vim ~/.xprofile </code>添加</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GTK_IM_MODULE = fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE  = fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS    = <span class="string">&quot;@im=fcitx&quot;</span></span><br></pre></td></tr></table></figure><p>重启在尝试一下</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Arch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> arch linux wps-office-linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>sublime text3代码出现白框</title>
+      <link href="/blog/2020/09/09/sublime-text3%E4%BB%A3%E7%A0%81%E5%87%BA%E7%8E%B0%E7%99%BD%E6%A1%86/"/>
+      <url>/blog/2020/09/09/sublime-text3%E4%BB%A3%E7%A0%81%E5%87%BA%E7%8E%B0%E7%99%BD%E6%A1%86/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/blog/assets/css/APlayer.min.css"><script src="/blog/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>原文地址：</strong><a href="https://blog.csdn.net/qq_44198216/article/details/104885186">https://blog.csdn.net/qq_44198216/article/details/104885186</a></p><p>写python代码的时候出现白框<br><img src="https://img-blog.csdnimg.cn/20200315202249609.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0MTk4MjE2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>![在这里插入图片描述](<a href="https://img-blog.csdnimg.cn/2020031520223322.png">https://img-blog.csdnimg.cn/2020031520223322.png</a><br>原因：代码不符合PEP8格式要求<br>导致自动补全的anaconda插件提示框框<br>解决办法：Sublime&gt;Perferences&gt;Package Settings&gt;Anaconda&gt;Setting User<br>增加一句配置 {“anaconda_linting”:false}<br><img src="https://img-blog.csdnimg.cn/20200315202258469.png#pic_center" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编辑器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sublime-text3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>wsl安装Arch Linux并给其配置图像界面</title>
+      <link href="/blog/2020/09/09/wsl%E5%AE%89%E8%A3%85Arch%20Linux%E5%B9%B6%E7%BB%99%E5%85%B6%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%83%8F%E7%95%8C%E9%9D%A2/"/>
+      <url>/blog/2020/09/09/wsl%E5%AE%89%E8%A3%85Arch%20Linux%E5%B9%B6%E7%BB%99%E5%85%B6%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%83%8F%E7%95%8C%E9%9D%A2/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/blog/assets/css/APlayer.min.css"><script src="/blog/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1、安装wsl"><a href="#1、安装wsl" class="headerlink" title="1、安装wsl"></a>1、安装wsl</h2><p>官方很详细，就不过多介绍了，安装wsl和升级wsl2官方文档：<a href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10">https://docs.microsoft.com/zh-cn/windows/wsl/install-win10</a></p><p><strong>注意：</strong>如果官方的升级wsl2失败，显示如下所示代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wsl --set-default-version 2</span><br><span class="line">Error: 0x1bc</span><br><span class="line">For information on key differences with WSL 2 please visit https:&#x2F;&#x2F;aka.ms&#x2F;wsl2</span><br></pre></td></tr></table></figure><p>请直接到<a href="https://docs.microsoft.com/zh-cn/windows/wsl/wsl2-kernel">https://docs.microsoft.com/zh-cn/windows/wsl/wsl2-kernel</a>下载最新的WSL2 Linux 内核更新包手动升级</p><h2 id="2、安装Arch"><a href="#2、安装Arch" class="headerlink" title="2、安装Arch"></a>2、安装Arch</h2><p>这儿有两种安装方法，我只取我成功的一种，另外一种请参考<a href="https://p3terx.com/archives/manage-wsl-with-lxrunoffline.html">https://p3terx.com/archives/manage-wsl-with-lxrunoffline.html</a></p><p>我的方法：<br>1、直接下载<a href="https://github.com/yuk7/ArchWSL/releases/tag/20.4.3.0">https://github.com/yuk7/ArchWSL/releases/tag/20.4.3.0</a>这位大佬集成的包<br><img src="https://img-blog.csdnimg.cn/2020090800405730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>点击下载最新版本的就好了<br>2、下载完成后重命名操作，将其后缀改回 <code>.zip</code>格式<br><img src="https://img-blog.csdnimg.cn/20200908004255615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200908004322824.png#pic_center" alt="在这里插入图片描述"><br>然后直接解压到文件夹就好了 <strong>注意：</strong>这儿解压到的文件夹便是以后这个wsl所在的盘，尽量放在内存大的盘，最好别放在系统盘。<br>我这儿是放在<code>D:\Linux\Arch</code>下面的，解压完成就是这个样子 <code>ext4.vhdx</code>最开始解压是没有的（我这儿是已经安装完成了的，如果安装成功wsl2，那么安装成功后这个文件便会出现！）<br><img src="https://img-blog.csdnimg.cn/20200908004501716.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>打开Arch.exe，稍微等待一下便会打开一个窗口，便是在安装，安装成功后窗口会自动关闭，再次点击Arch.exe便安装成功了。<br>也可以打开PowerShell使用wsl命令查看是否安装成功 输入 <code>wsl -l -v </code>  如果出现如下情况便是安装成功（如果只有一个wsl，那么直接输入<code>wsl</code>是可以直接进入Arch终端的）<br><img src="https://img-blog.csdnimg.cn/20200908005249212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>到这儿，Arch Linux便差不多安装成功了<br>可以进入终端更新一下系统（先切换中国源，不会的可自行百度）<code>sudo pacman -Syyu</code> </p><h2 id="3、安装桌面"><a href="#3、安装桌面" class="headerlink" title="3、安装桌面"></a>3、安装桌面</h2><p><strong>此处参考： <a href="https://www.jianshu.com/p/8404e34feefe">https://www.jianshu.com/p/8404e34feefe</a></strong></p><p>先安装<a href="https://sourceforge.net/projects/vcxsrv/">https://sourceforge.net/projects/vcxsrv/</a> Xlaunch（安装和设置教程 <a href="https://www.jianshu.com/p/8404e34feefe">https://www.jianshu.com/p/8404e34feefe</a>）</p><p>直接在终端输入 <code>sudo pacman -Sy xfce4  xfce4-terminal</code>安装xfce4桌面（其他桌面环境方法类似）<br>等待几分钟安装成功后便有两种情况：<br>1、版本为wsl1的：<br>原教程： <a href="https://www.jianshu.com/p/8404e34feefe">https://www.jianshu.com/p/8404e34feefe</a><br>    输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export DISPLAY&#x3D;:0.0</span><br><span class="line">export LIBGL_ALWAYS_INDIRECT&#x3D;1</span><br></pre></td></tr></table></figure><p>设置环境<br>再 <code>startxfce4</code>就能直接打开了</p><p>2、版本为wsl2的：<br><strong>此处参考：<a href="https://zhuanlan.zhihu.com/p/150555651">https://zhuanlan.zhihu.com/p/150555651</a></strong></p><p>由于WSL2其实是用Hyper-V技术实现的一个虚拟机,和WSL1的工作原理不一样,因此如果使用之前网上的方法直接设置DISPLAY=:0.0的话,启动xfce4的时候会出现下面的错误:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lpwm@DESKTOP-FI0NTIP:~$ startxfce4</span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;startxfce4: X server already running on display :0.0</span><br><span class="line">xrdb: Connection refused</span><br><span class="line">xrdb: Can&#39;t open display &#39;:0.0&#39;</span><br><span class="line">Unable to init server: Could not connect: Connection refused</span><br><span class="line">xfce4-session: Cannot open display: .</span><br><span class="line">Type &#39;xfce4-session --help&#39; for usage.</span><br></pre></td></tr></table></figure><p>正确的配置姿势</p><p>首先需要查看Windows系统和WSL2通信使用的虚拟网卡地址<br> <code>sudo vim /etc/resolv.conf</code><br>nameserver后面的地址就是Windows系统虚拟网卡的地址,记一下,同时需要取消下面两行内容的注释,禁用自动重新生成配置文件,否则重启后这个地址会变</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[network]</span><br><span class="line">generateResolvConf &#x3D; false</span><br><span class="line">nameserver 192.168.1.1（以自己的为主）</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure><p>在文件最后追加下面内容,地址使用上面查看到的<br>export DISPLAY=192.168.1.1:0 （以自己的为主）<br>启动xfce4</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startxfce4</span><br></pre></td></tr></table></figure><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9waWMzLnpoaW1nLmNvbS84MC92Mi0yMmY0MzcwZmQ2YWQ3ZTVkYTEzZjM3NmM5MWE3YTk2YV83MjB3LmpwZw?x-oss-process=image/format,png#pic_center" alt="在这里插入图片描述"></p><h2 id="4、问题解决"><a href="#4、问题解决" class="headerlink" title="4、问题解决"></a>4、问题解决</h2><p><strong>注意:</strong> 解决方法仅供参考<br>1、签名问题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syu</span><br><span class="line">error: key &quot;5F702428F70E0903&quot; could not be looked up remotely</span><br><span class="line">error: required key missing from keyring</span><br><span class="line">error: failed to commit transaction (unexpected error)</span><br><span class="line">Errors occurred, no packages were upgraded.</span><br></pre></td></tr></table></figure><p>如果更新的时候报了这样的签名错误, 先在<code>/etc/pacman.conf</code>文件里面最后添加如下内容:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustAll</span><br><span class="line">Server &#x3D; https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;archlinuxcn&#x2F;$arch</span><br></pre></td></tr></table></figure><p>再尝试输入命令<code>sudo pacman-key --init</code>,再输入<code>sudo pacman-key --populate</code><br>然后最后一步加载<code>archlinuxcn</code>签名 输入<code>sudo pacman -S archlinuxcn-keyring</code>加载完成后就成功了</p><h2 id="5、背景分享"><a href="#5、背景分享" class="headerlink" title="5、背景分享"></a>5、背景分享</h2><p><img src="https://img-blog.csdnimg.cn/2020090801145168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Arch </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
