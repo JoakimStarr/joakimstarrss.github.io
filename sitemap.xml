@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://joakimstarr.gitee.io/admin/index.html</loc>
+    
+    <lastmod>2020-09-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://joakimstarr.gitee.io/%E6%96%87%E4%BB%B6/index.html</loc>
+    
+    <lastmod>2020-09-30</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://joakimstarr.gitee.io/about/index.html</loc>
     
     <lastmod>2020-09-28</lastmod>
@@ -137,7 +151,7 @@
 
   <url>
     <loc>https://joakimstarr.gitee.io/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -145,91 +159,91 @@
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Arch-Linux-%E6%98%BE%E5%8D%A1-NVIDIA/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Linux-zsh-%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Ubuntu-Linux/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Ubuntu-Linux-%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Ubuntu-git-github/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Arch-Linux-Deepin-Win-Time/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/arch-linux-wps-office-linux/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Linux-vscode-anaconda/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/sublime-text3/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/%E8%BD%AF%E4%BB%B6-Ubuntu-mongodb-commpass/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Ubuntu-Linux-%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Linux-%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/tags/Arch-Linux-%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -238,35 +252,35 @@
   
   <url>
     <loc>https://joakimstarr.gitee.io/categories/Arch/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/categories/Linux/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/categories/Ubuntu/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/categories/%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://joakimstarr.gitee.io/categories/%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2020-09-28</lastmod>
+    <lastmod>2020-09-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
