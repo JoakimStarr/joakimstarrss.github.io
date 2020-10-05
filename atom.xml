@@ -6,7 +6,7 @@
   <link href="https://joakimstarr.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://joakimstarr.gitee.io/"/>
-  <updated>2020-09-09T05:33:17.026Z</updated>
+  <updated>2020-10-05T06:11:56.797Z</updated>
   <id>https://joakimstarr.gitee.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>解决Linux使用sudo打开的图形化界面无法输入中文 </title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/%E8%A7%A3%E5%86%B3Linux%E4%BD%BF%E7%94%A8sudo%E6%89%93%E5%BC%80%E7%9A%84%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/%E8%A7%A3%E5%86%B3Linux%E4%BD%BF%E7%94%A8sudo%E6%89%93%E5%BC%80%E7%9A%84%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh79p0014gvvoet4q02hk/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh79p0014gvvoet4q02hk/</id>
     <published>2020-09-09T05:31:54.000Z</published>
-    <updated>2020-09-09T05:33:17.026Z</updated>
+    <updated>2020-10-05T06:11:56.797Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>**参考:**<a href="https://forum.ubuntu.org.cn/viewtopic.php?t=480390">https://forum.ubuntu.org.cn/viewtopic.php?t=480390</a><br>今天偶然发现一件事情,使用sudo打开的图形化界面似乎都不能使用我所安装的中文输入法,然后在网上找资料,就有了下列的解决方法:<br>创建 /etc/sudoers_env 加入以下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE&#x3D;xim</span><br><span class="line">QT_IM_MODULE&#x3D;xim</span><br><span class="line">QT4_IM_MODULE&#x3D;xim</span><br></pre></td></tr></table></figure><p>执行 sudo visudo 加入以下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Defaults env_keep +&#x3D; &quot;XMODIFIERS&quot;</span><br><span class="line">Defaults env_file&#x3D;&quot;&#x2F;etc&#x2F;sudoers_env&quot;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -36,14 +36,18 @@
     <category term="Linux" scheme="https://joakimstarr.gitee.io/categories/Linux/"/>
     
     
-    <category term="Linux 软件" scheme="https://joakimstarr.gitee.io/tags/Linux-%E8%BD%AF%E4%BB%B6/"/>
+    <category term="Linux" scheme="https://joakimstarr.gitee.io/tags/Linux/"/>
+    
+    <category term="软件" scheme="https://joakimstarr.gitee.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+    <category term="输入法" scheme="https://joakimstarr.gitee.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>解决archlinux下Android手机无法传输文件 </title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/%E8%A7%A3%E5%86%B3archlinux%E4%B8%8BAndroid%E6%89%8B%E6%9C%BA%E6%97%A0%E6%B3%95%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/%E8%A7%A3%E5%86%B3archlinux%E4%B8%8BAndroid%E6%89%8B%E6%9C%BA%E6%97%A0%E6%B3%95%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh79q0017gvvobwrn7qfq/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh79q0017gvvobwrn7qfq/</id>
     <published>2020-09-09T05:21:23.000Z</published>
     <updated>2020-09-09T05:29:47.396Z</updated>
     
@@ -66,8 +70,8 @@
   
   <entry>
     <title>linux下的vscode配置anaconda的虚拟环境 </title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/linux%E4%B8%8B%E7%9A%84vscode%E9%85%8D%E7%BD%AEanaconda3%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/linux%E4%B8%8B%E7%9A%84vscode%E9%85%8D%E7%BD%AEanaconda3%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh79b000ngvvo9qryaxwa/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh79b000ngvvo9qryaxwa/</id>
     <published>2020-09-09T05:19:31.000Z</published>
     <updated>2020-09-09T05:31:05.596Z</updated>
     
@@ -90,8 +94,8 @@
   
   <entry>
     <title>archlinux安装Deepin-Win-Tim以及出现的问题 </title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/archlinux%E5%AE%89%E8%A3%85Deepin-Win-Tim%E4%BB%A5%E5%8F%8A%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/archlinux%E5%AE%89%E8%A3%85Deepin-Win-Tim%E4%BB%A5%E5%8F%8A%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh796000ggvvob53yhqd1/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh796000ggvvob53yhqd1/</id>
     <published>2020-09-09T05:14:59.000Z</published>
     <updated>2020-09-09T05:31:16.486Z</updated>
     
@@ -114,8 +118,8 @@
   
   <entry>
     <title>Ubuntu18.04国内源 </title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/Ubuntu18-04%E5%9B%BD%E5%86%85%E6%BA%90/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/Ubuntu18-04%E5%9B%BD%E5%86%85%E6%BA%90/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh7910007gvvoeiv90hid/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh7910007gvvoeiv90hid/</id>
     <published>2020-09-09T05:11:36.000Z</published>
     <updated>2020-09-09T05:31:09.566Z</updated>
     
@@ -138,8 +142,8 @@
   
   <entry>
     <title>Linux安装zsh及其插件 </title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/Linux%E5%AE%89%E8%A3%85zsh%E5%8F%8A%E5%85%B6%E6%8F%92%E4%BB%B6/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/Linux%E5%AE%89%E8%A3%85zsh%E5%8F%8A%E5%85%B6%E6%8F%92%E4%BB%B6/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh78t0003gvvodj6p33ce/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh78t0003gvvodj6p33ce/</id>
     <published>2020-09-09T05:04:10.000Z</published>
     <updated>2020-09-09T05:31:12.556Z</updated>
     
@@ -162,8 +166,8 @@
   
   <entry>
     <title>关于安装mongodb-commpass后无法打开的解决方法</title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/%E5%85%B3%E4%BA%8E%E5%AE%89%E8%A3%85mongodb-commpass%E5%90%8E%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/%E5%85%B3%E4%BA%8E%E5%AE%89%E8%A3%85mongodb-commpass%E5%90%8E%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh79l000xgvvo66i27pyy/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh79l000xgvvo66i27pyy/</id>
     <published>2020-09-08T18:51:20.000Z</published>
     <updated>2020-09-08T18:52:33.167Z</updated>
     
@@ -186,8 +190,8 @@
   
   <entry>
     <title>Ubuntu18上git和github连接配置</title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/Ubuntu18%E4%B8%8Agit%E5%92%8Cgithub%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/Ubuntu18%E4%B8%8Agit%E5%92%8Cgithub%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh794000bgvvo6rlaewkq/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh794000bgvvo6rlaewkq/</id>
     <published>2020-09-08T18:39:43.000Z</published>
     <updated>2020-09-08T18:43:34.377Z</updated>
     
@@ -210,8 +214,8 @@
   
   <entry>
     <title>Archlinux双显卡安装NVIDIA闭源驱动</title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/Archlinux%E5%8F%8C%E6%98%BE%E5%8D%A1%E5%AE%89%E8%A3%85NVIDIA%E9%97%AD%E6%BA%90%E9%A9%B1%E5%8A%A8/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/Archlinux%E5%8F%8C%E6%98%BE%E5%8D%A1%E5%AE%89%E8%A3%85NVIDIA%E9%97%AD%E6%BA%90%E9%A9%B1%E5%8A%A8/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh78p0001gvvohp853t3w/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh78p0001gvvohp853t3w/</id>
     <published>2020-09-08T18:36:27.000Z</published>
     <updated>2020-09-09T05:30:24.956Z</updated>
     
@@ -234,12 +238,12 @@
   
   <entry>
     <title>安装Ubuntu的几十次坑的经验</title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E5%87%A0%E5%8D%81%E6%AC%A1%E5%9D%91%E7%9A%84%E7%BB%8F%E9%AA%8C/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/%E5%AE%89%E8%A3%85Ubuntu%E7%9A%84%E5%87%A0%E5%8D%81%E6%AC%A1%E5%9D%91%E7%9A%84%E7%BB%8F%E9%AA%8C/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh79o0011gvvodqu5gzg4/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh79o0011gvvodqu5gzg4/</id>
     <published>2020-09-08T16:41:14.000Z</published>
-    <updated>2020-09-08T18:37:52.207Z</updated>
+    <updated>2020-10-05T07:48:15.110Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="分享安装Ubuntu的几十次坑的经验"><a href="#分享安装Ubuntu的几十次坑的经验" class="headerlink" title="分享安装Ubuntu的几十次坑的经验"></a>分享安装Ubuntu的几十次坑的经验</h2><h2 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;曾经有一段时间我安装了一个双系统，win10和centos7，安装成功后没什么大问题，只是centos7的引导出现了问题，每次打开必须进入到启动菜单项，所以我基本上都是在用win10，centos7几乎没有用到。在某一天，我和一个朋友聊天时候突然意识到，如果要适应Linux的操作环境，就必须舍弃掉Windows，因为还是学生，都是想一出就做一出，所以呢当即我就去做了一个Ubuntu启动盘，准备开始投入Linux的怀抱当中，至于为什么选择Ubuntu呢，而不是centos7呢。可能当时安装过centos7，一些显卡上的原因导致界面清晰度不足，由于当时基本上都是在使用win，所以呢，也就没有去找原因和去解决，有了一个坏印象，又因为当时那个朋友正在使用Ubuntu，所以我并选择了Ubuntu.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我在安装的时候遇到了各种各样的问题，都几乎让我感到崩溃。百度上原因，好多都是相同类型的文章，大都无法令我的问题解决，或者是解决了又出来新的问题，例如grub引导失败、开机卡死、开不了机等等。以至于我当时安装了几十次。一次次遇到的问题，一次次的重装，让我从刚开始连机都开不了到最后打开了界面，但可能因为我电脑的原因，导致在安装成功后还能遇到各种各样的问题。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我遇到的问题很多，但是呢，我并不是都一一解决的，可能有些时候靠了一点运气成分，不知不觉就解决了，所以我只分享几个我已经知道问题解决的方法。希望对你有所帮助<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>注意</strong>：我只讲发生问题和解决的办法，并不提供安装教程，如果还没安装的，可以自行百度。我使用rufus制作的启动盘，因为我使用软通牒的出了好几次问题，偶然间看到一个论坛里面有人说使用这个官方的可以解决很多问题，于是我便换了工具，<br>工具/iso下载地址：rufus：<a href="https://rufus.ie/">https://rufus.ie/</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu18.04：<a href="https://www.ubuntu.com/download/desktop">https://www.ubuntu.com/download/desktop</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu16.04：</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中科大源<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mirrors.ustc.edu.cn/ubuntu-releases/16.04/">http://mirrors.ustc.edu.cn/ubuntu-releases/16.04/</a>　<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阿里云开源镜像站<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mirrors.aliyun.com/ubuntu-releases/16.04/">http://mirrors.aliyun.com/ubuntu-releases/16.04/</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;兰州大学开源镜像站<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mirror.lzu.edu.cn/ubuntu-releases/16.04/">http://mirror.lzu.edu.cn/ubuntu-releases/16.04/</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京理工大学开源<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mirror.bit.edu.cn/ubuntu-releases/16.04/">http://mirror.bit.edu.cn/ubuntu-releases/16.04/</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浙江大学<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  <a href="http://mirrors.zju.edu.cn/ubuntu-releases/16.04/">http://mirrors.zju.edu.cn/ubuntu-releases/16.04/</a></p><h2 id="2、grub引导失败"><a href="#2、grub引导失败" class="headerlink" title="2、grub引导失败"></a>2、grub引导失败</h2><p><strong>原因：</strong> 无法将grub-efi-amd64-signed软件包安装到/target/，如果没有GRUB启动引导器，所安装的系统将无法启动<br><strong>叙述：</strong> 这个问题是最让我头疼的，当初安装双系统的时候就遇到过这样的问题，centos7也遇到过，当初没有解决，所以centos7打开的时候只能每次都从启动菜单中选择启动。但是Ubuntu不一样了，我每次遇到这个情况，都是注定打开不了系统的，所以这个问题当初是让我最烦的。<br><strong>解决：</strong> 最简单的解决方法就是打开BIOS，将传统启动方式打开（我的是hp，所以叫这个名字），开机选择启动项，会出现两个U盘启动方式，一是带UEFI的，一种则没有，选择没有的启动就问题解决了</p><h1 id="安装的时候卡主不动"><a href="#安装的时候卡主不动" class="headerlink" title="安装的时候卡主不动"></a>安装的时候卡主不动</h1><p><strong>原因：</strong> </p><p><strong>叙述：</strong> 这个问题是最让我头疼的，当初安装双系统的时候就遇到过这样的问题，centos7也遇到过，当初没有解决，所以centos7打开的时候只能每次都从启动菜单中选择启动。但是Ubuntu不一样了，我每次遇到这个情况，都是注定打开不了系统的，所以这个问题当初是让我最烦的。<br><strong>解决：</strong> 最简单的解决方法就是打开BIOS，将传统启动方式打开（我的是hp，所以叫这个名字），开机选择启动项，会出现两个U盘启动方式，一是带UEFI的，一种则没有，选择没有的启动就问题解决了</p><h1 id="进入界面后或者登录成功后卡主不动"><a href="#进入界面后或者登录成功后卡主不动" class="headerlink" title="进入界面后或者登录成功后卡主不动"></a>进入界面后或者登录成功后卡主不动</h1><p><strong>原因:</strong> 可能是因为显卡驱动的问题<br><strong>叙述:</strong> 这个问题也是我最头痛的问题之一,没错安装好系统,,开开心心的打开系统,发现每次登陆成功后等会卡在界面上,我安装成功的完好心情又被破坏了,然后重装,,,,<br><strong>解决:</strong> 在开机时在选择界面停留按’e’键,找到’<code>quite</code>‘后面加上<code>&#39;nouveau.modeset=0&#39;,</code>按Ctrl+X启动,临时解决,<br>        <strong>永久解决:</strong><br>        1，开机成功后打开/boot/grub/grub.cfg文件,找到’quite’后加入’nouveau.modeset=0’或者安装显卡驱动,<br>        2，成功进入页面后安装NVIDIA显卡驱动，可以直接去软件更新器里面的附加驱动，选择显卡驱动，选择NVIDIA，<br>            还有就是命令行安装，使用源安装的话，就需要添加NVIDIA源，这个可以去网上找，也可以直接安装Ubuntu默认的NVIDIA显卡，在命令行输入<code>Ubuntu-driver autoinstall</code>安装成功重启就好了</p><h1 id="安装成功后不进行引导选项菜单"><a href="#安装成功后不进行引导选项菜单" class="headerlink" title="安装成功后不进行引导选项菜单"></a>安装成功后不进行引导选项菜单</h1><p><strong>原因：</strong> 应该是因为电脑上只有一个系统，所以为了开机快速，就直接跳过这个了吧，<br><strong>叙述：</strong> 曾经的我一度认为这是我电脑出来问题了，然后重装了n次，后面才终于找到解决方法<br><strong>解决：</strong> 再开机的时候狂按<code>shift</code>键，就好了<br>如何这样还是没有解决，就进入终端模式，编辑<code>/etc/default/grub </code>，将<code>GRUB_TIMEOUT=0</code>修改为<code>GRUB_TIMEOUT=10</code>就好了</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="分享安装Ubuntu的几十次坑的经验"><a href="#分享安装Ubuntu的几十次坑的经验" class="headerlink" title="分享安装Ubuntu的几十次坑的经验"></a>分享安装Ubuntu的几十次坑的经验</h2><h2 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h2><p>（其实WSL挺香的 如果关注WSL可以看我的另外一篇博客:<a href="https://joakimstarr.gitee.io/2020/09/09/ckfp808tu000rb6vo29ccaskc/%EF%BC%89">https://joakimstarr.gitee.io/2020/09/09/ckfp808tu000rb6vo29ccaskc/）</a><br>曾经有一段时间我安装了一个双系统，Win10和Centos7，安装成功后没什么大问题，只是Centos7的引导出现了问题，每次打开必须进入到启动菜单项，所以我基本上都是在用Win10，Centos7几乎没有用到。在某一天，我和一个朋友聊天时候突然意识到，如果要适应Linux的操作环境，就必须舍弃掉Windows，因为还是学生，都是想一出就做一出，所以呢当即我就去做了一个Ubuntu启动盘，准备开始投入Linux的怀抱当中，至于为什么选择Ubuntu呢，而不是Centos7呢。可能当时安装过Centos7，一些显卡上的原因导致界面清晰度不足，由于当时基本上都是在使用Win，所以呢，也就没有去找原因和去解决，有了一个坏印象，又因为当时那个朋友正在使用Ubuntu，所以我选择了Ubuntu。<br>我在安装的时候遇到了各种各样的问题，都几乎让我感到崩溃。百度上原因，好多都是相同类型的文章，大都无法令我的问题解决，或者是解决了又出来新的问题，例如grub引导失败、开机卡死、开不了机等等。以至于我当时安装了几十次。一次次遇到的问题，一次次的重装，让我从刚开始连机都开不了到最后打开了界面，成功使用。（但可能因为我电脑的原因，导致在安装成功后还能遇到各种各样的问题）<br>我遇到的问题很多，但是呢，我并不是都一一解决的，可能有些时候靠了一点运气成分，不知不觉就解决了，所以我只分享几个我已经知道问题解决的方法。希望对你有所帮助</p><hr><p><del>正文开始</del><br><strong>注意</strong>:我只讲发生问题和解决的办法，并不提供安装教程，如果还没安装的，可以自行百度。我使用rufus制作的启动盘，因为我使用软通牒的出了好几次问题，偶然间看到一个论坛里面有人说使用这个可以解决很多问题，于是我便换了工具，</p><ul><li>工具/ISO下载地址(强烈推荐):<ul><li>rufus:<a href="https://rufus.ie/">https://rufus.ie/</a></li><li>Ubuntu:<a href="https://www.ubuntu.com/download/desktop">https://www.ubuntu.com/download/desktop</a> (官方网站，下载速度很慢)<ul><li>中科大源:<a href="http://mirrors.ustc.edu.cn/ubuntu-releases//">http://mirrors.ustc.edu.cn/ubuntu-releases//</a></li><li>阿里云开源镜像站:<a href="http://mirrors.aliyun.com/ubuntu-releases/">http://mirrors.aliyun.com/ubuntu-releases/</a></li><li>兰州大学开源镜像站:<a href="http://mirror.lzu.edu.cn/ubuntu-releases/">http://mirror.lzu.edu.cn/ubuntu-releases/</a></li><li>北京理工大学开源:<a href="http://mirror.bit.edu.cn/ubuntu-releases/">http://mirror.bit.edu.cn/ubuntu-releases/</a></li><li>浙江大学:<a href="http://mirrors.zju.edu.cn/ubuntu-releases/">http://mirrors.zju.edu.cn/ubuntu-releases/</a></li></ul></li></ul></li></ul><h2 id="2、问题"><a href="#2、问题" class="headerlink" title="2、问题"></a>2、问题</h2><h4 id="1、grub引导失败"><a href="#1、grub引导失败" class="headerlink" title="1、grub引导失败"></a>1、grub引导失败</h4><p><strong>原因:</strong> 无法将grub-efi-amd64-signed软件包安装到/target/，如果没有GRUB启动引导器，所安装的系统将无法启动<br><strong>叙述:</strong> 这个问题是最让我头疼的，当初安装双系统的时候就遇到过这样的问题，Centos7也遇到过，当初没有解决，所以Centos7打开的时候只能每次都从启动菜单中选择启动。但是Ubuntu不一样了，我每次遇到这个情况，都是注定打开不了系统的，所以这个问题当初是让我最烦的。<br><strong>解决:</strong> 最简单的解决方法就是打开BIOS，将传统启动方式打开（我的是hp，所以叫这个名字），开机选择启动项，会出现两个U盘启动方式，一是带UEFI的，一种则没有，选择没有的启动就问题解决了</p><h4 id="2、安装的时候卡主不动"><a href="#2、安装的时候卡主不动" class="headerlink" title="2、安装的时候卡主不动"></a>2、安装的时候卡主不动</h4><p><strong>原因:</strong> 应该是显卡驱动的问题</p><p><strong>叙述:</strong> 这个问题是最让我头疼的，当初安装双系统的时候就遇到过这样的问题，Centos7也遇到过，当初没有解决，所以Centos7打开的时候只能每次都从启动菜单中选择启动。但是Ubuntu不一样了，我每次遇到这个情况，都是注定打开不了系统的，所以这个问题当初是让我最烦的。<br><strong>解决:</strong> 最简单的解决方法就是打开BIOS，将传统启动方式打开（我的是hp，所以叫这个名字），开机选择启动项，会出现两个U盘启动方式，一是带UEFI的，一种则没有，选择没有的启动就问题解决了</p><h4 id="3、进入界面后或者登录成功后卡主不动"><a href="#3、进入界面后或者登录成功后卡主不动" class="headerlink" title="3、进入界面后或者登录成功后卡主不动"></a>3、进入界面后或者登录成功后卡主不动</h4><p><strong>原因:</strong> 可能也是因为显卡驱动的问题<br><strong>叙述:</strong> 这个问题也是我最头痛的问题之一,没错安装好系统,,开开心心的打开系统,发现每次登陆成功后等会卡在界面上,我安装成功的完好心情又被破坏了,然后重装,,,,<br><strong>解决:</strong> 在开机时在选择界面停留按’e’键,找到’<code>quite</code>‘后面加上<code>&#39;nouveau.modeset=0&#39;,</code>按Ctrl+X启动,临时解决,<br>        <strong>永久解决:</strong><br>        1，开机成功后打开/boot/grub/grub.cfg文件,找到’quite’后加入’nouveau.modeset=0’或者安装显卡驱动,<br>        2，成功进入页面后安装NVIDIA显卡驱动，可以直接去软件更新器里面的附加驱动，选择显卡驱动，选择NVIDIA，<br>            还有就是命令行安装，使用源安装的话，就需要添加NVIDIA源，这个可以去网上找，也可以直接安装Ubuntu默认的NVIDIA显卡，在命令行输入<code>Ubuntu-driver autoinstall</code>安装成功重启就好了</p><h4 id="4、安装成功后不进行引导选项菜单"><a href="#4、安装成功后不进行引导选项菜单" class="headerlink" title="4、安装成功后不进行引导选项菜单"></a>4、安装成功后不进行引导选项菜单</h4><p><strong>原因:</strong> 应该是因为电脑上只有一个系统，所以为了开机快速，就直接跳过这个了吧，<br><strong>叙述:</strong> 曾经的我一度认为这是我电脑出来问题了，然后重装了n次，后面才终于找到解决方法<br><strong>解决:</strong> 再开机的时候狂按<code>shift</code>键，就好了<br>如何这样还是没有解决，就进入终端模式，编辑<code>/etc/default/grub </code>，将<code>GRUB_TIMEOUT=0</code>修改为<code>GRUB_TIMEOUT=10</code>就好了</p>]]></content>
     
     
       
@@ -251,15 +255,19 @@
     
     <category term="Ubuntu" scheme="https://joakimstarr.gitee.io/categories/Ubuntu/"/>
     
+    <category term="Linux" scheme="https://joakimstarr.gitee.io/categories/Ubuntu/Linux/"/>
     
-    <category term="Ubuntu Linux 安装" scheme="https://joakimstarr.gitee.io/tags/Ubuntu-Linux-%E5%AE%89%E8%A3%85/"/>
+    
+    <category term="Ubuntu" scheme="https://joakimstarr.gitee.io/tags/Ubuntu/"/>
+    
+    <category term="Linux" scheme="https://joakimstarr.gitee.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu18.10网易云音乐无法启动</title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/Ubuntu18-10%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/Ubuntu18-10%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh7920009gvvod1ahd0eo/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh7920009gvvod1ahd0eo/</id>
     <published>2020-09-08T16:40:09.000Z</published>
     <updated>2020-09-08T18:37:59.697Z</updated>
     
@@ -282,8 +290,8 @@
   
   <entry>
     <title>arch中wps无法输入中文</title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/arch%E4%B8%ADwps%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/arch%E4%B8%ADwps%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E4%B8%AD%E6%96%87/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh799000igvvo7f748idj/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh799000igvvo7f748idj/</id>
     <published>2020-09-08T16:39:47.000Z</published>
     <updated>2020-09-08T18:37:46.907Z</updated>
     
@@ -306,8 +314,8 @@
   
   <entry>
     <title>sublime text3代码出现白框</title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/sublime-text3%E4%BB%A3%E7%A0%81%E5%87%BA%E7%8E%B0%E7%99%BD%E6%A1%86/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/sublime-text3%E4%BB%A3%E7%A0%81%E5%87%BA%E7%8E%B0%E7%99%BD%E6%A1%86/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh79d000qgvvo9apj9tsz/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh79d000qgvvo9apj9tsz/</id>
     <published>2020-09-08T16:38:14.000Z</published>
     <updated>2020-09-08T18:34:27.887Z</updated>
     
@@ -330,8 +338,8 @@
   
   <entry>
     <title>wsl安装Arch Linux并给其配置图像界面</title>
-    <link href="https://joakimstarr.gitee.io/2020/09/09/wsl%E5%AE%89%E8%A3%85Arch%20Linux%E5%B9%B6%E7%BB%99%E5%85%B6%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%83%8F%E7%95%8C%E9%9D%A2/"/>
-    <id>https://joakimstarr.gitee.io/2020/09/09/wsl%E5%AE%89%E8%A3%85Arch%20Linux%E5%B9%B6%E7%BB%99%E5%85%B6%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%83%8F%E7%95%8C%E9%9D%A2/</id>
+    <link href="https://joakimstarr.gitee.io/2020/09/09/ckfwbh79h000ugvvo58o320mo/"/>
+    <id>https://joakimstarr.gitee.io/2020/09/09/ckfwbh79h000ugvvo58o320mo/</id>
     <published>2020-09-08T16:08:42.000Z</published>
     <updated>2020-09-09T05:31:06.606Z</updated>
     
