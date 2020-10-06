@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>wsl安装Arch Linux并给其配置图像界面 | 司冷の小さい庭</title><meta name="description" content="1、安装wsl官方很详细，就不过多介绍了，安装wsl和升级wsl2官方文档：https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;windows&#x2F;wsl&#x2F;install-win10 注意：如果官方的升级wsl2失败，显示如下所示代码： 123wsl --set-default-version 2Error: 0x1bcFor information on key differences"><meta name="keywords" content="博客 ubuntu linux 学习"><meta name="author" content="Joakim Starr"><meta name="copyright" content="Joakim Starr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://joakimstarr.gitee.io/2020/10/06/ckfxel58v000s5pvo6jpsd8no/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="&lt;meta name=&quot;baidu-site-verification&quot; content=&quot;code-U7nL82w3Qu&quot; /&gt;"/><meta property="og:type" content="article"><meta property="og:title" content="wsl安装Arch Linux并给其配置图像界面"><meta property="og:url" content="https://joakimstarr.gitee.io/2020/10/06/ckfxel58v000s5pvo6jpsd8no/"><meta property="og:site_name" content="司冷の小さい庭"><meta property="og:description" content="1、安装wsl官方很详细，就不过多介绍了，安装wsl和升级wsl2官方文档：https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-cn&#x2F;windows&#x2F;wsl&#x2F;install-win10 注意：如果官方的升级wsl2失败，显示如下所示代码： 123wsl --set-default-version 2Error: 0x1bcFor information on key differences"><meta property="og:image" content="https://joakimstarr.gitee.io/img/wlop-elves-pointed-ears-women-wallpaper-7961ad03190a131351540f634b9b40c2.jpg"><meta property="article:published_time" content="2020-10-05T16:08:42.000Z"><meta property="article:modified_time" content="2020-10-06T03:27:40.573Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?182ae91b95213e650c58a84067b68276";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.1',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '天',
+  date_suffix: {"one_hour":"刚刚","hours":"小时前","day":"天前"},
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+    },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-10-06 11:27:40'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="司冷の小さい庭" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">14</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/Music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85wsl"><span class="toc-number">1.</span> <span class="toc-text">1、安装wsl</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%AE%89%E8%A3%85Arch"><span class="toc-number">2.</span> <span class="toc-text">2、安装Arch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2"><span class="toc-number">3.</span> <span class="toc-text">3、安装桌面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-number">4.</span> <span class="toc-text">4、问题解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E8%83%8C%E6%99%AF%E5%88%86%E4%BA%AB"><span class="toc-number">5.</span> <span class="toc-text">5、背景分享</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(/./img/wlop-elves-pointed-ears-women-wallpaper-7961ad03190a131351540f634b9b40c2.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">司冷の小さい庭</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/Music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">wsl安装Arch Linux并给其配置图像界面</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-05T16:08:42.000Z" title="发表于 2020-10-06 00:08:42">2020-10-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-10-06T03:27:40.573Z" title="更新于 2020-10-06 11:27:40">2020-10-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Windows/">Windows</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Windows/Linux/">Linux</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="1、安装wsl"><a href="#1、安装wsl" class="headerlink" title="1、安装wsl"></a>1、安装wsl</h2><p>官方很详细，就不过多介绍了，安装wsl和升级wsl2官方文档：<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10">https://docs.microsoft.com/zh-cn/windows/wsl/install-win10</a></p>
+<p><strong>注意：</strong>如果官方的升级wsl2失败，显示如下所示代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wsl --set-default-version 2</span><br><span class="line">Error: 0x1bc</span><br><span class="line">For information on key differences with WSL 2 please visit https:&#x2F;&#x2F;aka.ms&#x2F;wsl2</span><br></pre></td></tr></table></figure>
+<p>请直接到<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/wsl2-kernel">https://docs.microsoft.com/zh-cn/windows/wsl/wsl2-kernel</a>下载最新的WSL2 Linux 内核更新包手动升级</p>
+<h2 id="2、安装Arch"><a href="#2、安装Arch" class="headerlink" title="2、安装Arch"></a>2、安装Arch</h2><p>这儿有两种安装方法，我只取我成功的一种，另外一种请参考<a target="_blank" rel="noopener" href="https://p3terx.com/archives/manage-wsl-with-lxrunoffline.html">https://p3terx.com/archives/manage-wsl-with-lxrunoffline.html</a></p>
+<p>我的方法：<br>1、直接下载<a target="_blank" rel="noopener" href="https://github.com/yuk7/ArchWSL/releases/tag/20.4.3.0">https://github.com/yuk7/ArchWSL/releases/tag/20.4.3.0</a>这位大佬集成的包<br><img src="https://img-blog.csdnimg.cn/2020090800405730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>点击下载最新版本的就好了<br>2、下载完成后重命名操作，将其后缀改回 <code>.zip</code>格式<br><img src="https://img-blog.csdnimg.cn/20200908004255615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200908004322824.png#pic_center" alt="在这里插入图片描述"><br>然后直接解压到文件夹就好了 <strong>注意：</strong>这儿解压到的文件夹便是以后这个wsl所在的盘，尽量放在内存大的盘，最好别放在系统盘。<br>我这儿是放在<code>D:\Linux\Arch</code>下面的，解压完成就是这个样子 <code>ext4.vhdx</code>最开始解压是没有的（我这儿是已经安装完成了的，如果安装成功wsl2，那么安装成功后这个文件便会出现！）<br><img src="https://img-blog.csdnimg.cn/20200908004501716.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>打开Arch.exe，稍微等待一下便会打开一个窗口，便是在安装，安装成功后窗口会自动关闭，再次点击Arch.exe便安装成功了。<br>也可以打开PowerShell使用wsl命令查看是否安装成功 输入 <code>wsl -l -v </code>  如果出现如下情况便是安装成功（如果只有一个wsl，那么直接输入<code>wsl</code>是可以直接进入Arch终端的）<br><img src="https://img-blog.csdnimg.cn/20200908005249212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>到这儿，Arch Linux便差不多安装成功了<br>可以进入终端更新一下系统（先切换中国源，不会的可自行百度）<code>sudo pacman -Syyu</code> </p>
+<h2 id="3、安装桌面"><a href="#3、安装桌面" class="headerlink" title="3、安装桌面"></a>3、安装桌面</h2><p><strong>此处参考： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8404e34feefe">https://www.jianshu.com/p/8404e34feefe</a></strong></p>
+<p>先安装<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/vcxsrv/">https://sourceforge.net/projects/vcxsrv/</a> Xlaunch（安装和设置教程 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8404e34feefe">https://www.jianshu.com/p/8404e34feefe</a>）</p>
+<p>直接在终端输入 <code>sudo pacman -Sy xfce4  xfce4-terminal</code>安装xfce4桌面（其他桌面环境方法类似）<br>等待几分钟安装成功后便有两种情况：<br>1、版本为wsl1的：<br>原教程： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8404e34feefe">https://www.jianshu.com/p/8404e34feefe</a><br>    输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export DISPLAY&#x3D;:0.0</span><br><span class="line">export LIBGL_ALWAYS_INDIRECT&#x3D;1</span><br></pre></td></tr></table></figure>
+<p>设置环境<br>再 <code>startxfce4</code>就能直接打开了</p>
+<p>2、版本为wsl2的：<br><strong>此处参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/150555651">https://zhuanlan.zhihu.com/p/150555651</a></strong></p>
+<p>由于WSL2其实是用Hyper-V技术实现的一个虚拟机,和WSL1的工作原理不一样,因此如果使用之前网上的方法直接设置DISPLAY=:0.0的话,启动xfce4的时候会出现下面的错误:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lpwm@DESKTOP-FI0NTIP:~$ startxfce4</span><br><span class="line">&#x2F;usr&#x2F;bin&#x2F;startxfce4: X server already running on display :0.0</span><br><span class="line">xrdb: Connection refused</span><br><span class="line">xrdb: Can&#39;t open display &#39;:0.0&#39;</span><br><span class="line">Unable to init server: Could not connect: Connection refused</span><br><span class="line">xfce4-session: Cannot open display: .</span><br><span class="line">Type &#39;xfce4-session --help&#39; for usage.</span><br></pre></td></tr></table></figure>
+<p>正确的配置姿势</p>
+<p>首先需要查看Windows系统和WSL2通信使用的虚拟网卡地址<br> <code>sudo vim /etc/resolv.conf</code><br>nameserver后面的地址就是Windows系统虚拟网卡的地址,记一下,同时需要取消下面两行内容的注释,禁用自动重新生成配置文件,否则重启后这个地址会变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[network]</span><br><span class="line">generateResolvConf &#x3D; false</span><br><span class="line">nameserver 192.168.1.1（以自己的为主）</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>在文件最后追加下面内容,地址使用上面查看到的<br>export DISPLAY=192.168.1.1:0 （以自己的为主）<br>启动xfce4</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startxfce4</span><br></pre></td></tr></table></figure>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9waWMzLnpoaW1nLmNvbS84MC92Mi0yMmY0MzcwZmQ2YWQ3ZTVkYTEzZjM3NmM5MWE3YTk2YV83MjB3LmpwZw?x-oss-process=image/format,png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="4、问题解决"><a href="#4、问题解决" class="headerlink" title="4、问题解决"></a>4、问题解决</h2><p><strong>注意:</strong> 解决方法仅供参考<br>1、签名问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syu</span><br><span class="line">error: key &quot;5F702428F70E0903&quot; could not be looked up remotely</span><br><span class="line">error: required key missing from keyring</span><br><span class="line">error: failed to commit transaction (unexpected error)</span><br><span class="line">Errors occurred, no packages were upgraded.</span><br></pre></td></tr></table></figure>
+<p>如果更新的时候报了这样的签名错误, 先在<code>/etc/pacman.conf</code>文件里面最后添加如下内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel &#x3D; Optional TrustAll</span><br><span class="line">Server &#x3D; https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;archlinuxcn&#x2F;$arch</span><br></pre></td></tr></table></figure>
+<p>再尝试输入命令<code>sudo pacman-key --init</code>,再输入<code>sudo pacman-key --populate</code><br>然后最后一步加载<code>archlinuxcn</code>签名 输入<code>sudo pacman -S archlinuxcn-keyring</code>加载完成后就成功了</p>
+<h2 id="5、背景分享"><a href="#5、背景分享" class="headerlink" title="5、背景分享"></a>5、背景分享</h2><p><img src="https://img-blog.csdnimg.cn/2020090801145168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxOTMyNjY1,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+</div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/./img/wlop-elves-pointed-ears-women-wallpaper-7961ad03190a131351540f634b9b40c2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/10/06/ckfxel591000y5pvo42syggim/"><img class="prev-cover" src="/./img/wlop-elves-pointed-ears-women-wallpaper-7961ad03190a131351540f634b9b40c2.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">安装Ubuntu的几十次坑的经验</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/09/ckfxel59300115pvo06lb8jze/"><img class="next-cover" src="/./img/wlop-elves-pointed-ears-women-wallpaper-7961ad03190a131351540f634b9b40c2.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">解决Linux使用sudo打开的图形化界面无法输入中文 </div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC80NjcyNy8yMzIzNg"></div></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Joakim Starr</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/f03c08c6.js","daovoice")
+</script><script>var isChatBtn = true
+daovoice('init', {
+  app_id: 'f03c08c6',},{
+  launcher: { 
+     disableLauncherIcon: isChatBtn // 悬浮 ICON 是否显示
+  },
+});
+daovoice('update');
+
+if (isChatBtn) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      daovoice('show')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      daovoice('update', {},{
+        launcher: { 
+        disableLauncherIcon: true // 悬浮 ICON 是否显示
+        },
+      });
+    }
+    function chatBtnShow () {
+      daovoice('update', {},{
+        launcher: { 
+        disableLauncherIcon: false // 悬浮 ICON 是否显示
+        },
+      });
+    }
+  }
+}</script></div></body></html>
