@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>VS Code server for WSL closed unexpectedly check WSL terminal for more details</title>
+      <link href="/2021/02/02/ckkntxorc0002ekus7z389fut/"/>
+      <url>/2021/02/02/ckkntxorc0002ekus7z389fut/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>如图：<br><img src="https://img-blog.csdnimg.cn/20200227185204840.png#pic_center" alt="图片地址https://blog.csdn.net/weixin_45485719/article/details/104542698"><br>图片来自：<a href="https://blog.csdn.net/weixin_45485719/article/details/104542698">https://blog.csdn.net/weixin_45485719/article/details/104542698</a><br>和 cmd 界面提示：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS C:\WINDOWS\system32&gt; wsl </span><br><span class="line">参考的对象类型不支持尝试的操作</span><br></pre></td></tr></table></figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>参考：<a href="https://blog.csdn.net/x356982611/article/details/108422428">https://blog.csdn.net/x356982611/article/details/108422428</a></p><p>使用管理员权限打开powershell 然后执行下面的语句重置网络就可以了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh winsock reset</span><br></pre></td></tr></table></figure><p>然后重启启动，，就好了</p><h2 id="博客地址"><a href="#博客地址" class="headerlink" title="博客地址"></a>博客地址</h2><p><a href="https://joakimstarr.gitee.io/">https://joakimstarr.gitee.io/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> win </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> VsCode </tag>
+            
+            <tag> wsl </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>湖边小散</title>
+      <link href="/2021/02/02/ckkntxosc000dekus396q4273/"/>
+      <url>/2021/02/02/ckkntxosc000dekus396q4273/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>今夜，本是准备前往湖边走走，奈何天气寒冷，而湖边风大，我又衣着单薄，便未前往，于是便于校园内随便走走。<br>  我一直觉得，九江的风确实大的很，我一贵州人，于大山之地已待许久，那曾见过如此寒冷有巨大的风。想着，又不免拉紧了衣领。家乡的温度虽低，但却也不曾见得如此之冷。于是我便把原因怪罪在九江的风身上了，谁让我确实未曾见过这等风呢。说起九江的风，我便不得不提起前往浔阳楼那次了。或许是我本人有些偏执了。那日去往浔阳楼时，下着大雨，我却偏要走去（现在想起不免觉着可笑，以至于我回来时已经成落汤鸡了），兜兜转转走了2个多钟头，便是到了。浔阳楼位于长江边，开始还未有任何感觉，便买票进入。或是一人无聊，兴致便未很高，从一楼走到三楼，再由三楼走向一楼，除了风大以外，倒是再未有任何感觉了。但又不愿过早回去，便又往上走，此处我便放慢了步伐，将墙上所画水浒人物全看了个遍。所幸曾看过该书，便能看懂些许，便越发感到有趣了。续往上去，三楼便显得空荡许多了，只感到江风又大了许多。在楼中待了许久，便下楼而归。此时浔阳楼的风才是最大（我并不知是否是浔阳楼最大的，只知是我经历过的最大），我一外乡人确实感到了九江的风的热情，似乎我的伞已经抵挡不住……<br>  冷风一吹，使我的思绪又回来了，手又不觉把身上的衣服扯了扯。今年或许在九江是无法见到雪了吧，作为一个南方人，我见到雪的次数算多了，家乡年年下雪，那时也是全家团聚的时候。或许那是小时最开心的季节了吧，不光能见着雪，也可以见到父母。父母常年在外，很久未能相见，若不是每年（也不算每年，也偶尔也几年也为回来）回来一次，我怕是要忘记他们的样子了。所幸我早已习惯，便也就无多大的感觉了。我已多久未回到家乡了吧，我记着，19年我就未曾回去，现在想着还挺感遗憾的，毕竟那时老人家身体算好的一年了。第二年我便回去了，原因是便是老人家身体不行了。那一年我倒是也感受到了生离死别，和小时候的不一样，小时不懂大人为何哭泣，亦不懂为何有人为何欢笑。现是懂了，哭泣是不舍，欢笑是强颜。老人家那年终是走了。我也哭了，多年未曾哭泣的我，确实懂得了什么叫不舍。我从小便是于他们一同生活，或是对他们的感情高过了父母吧。<br>  九江的冬天确实寒冷，不知夏天如何，我曾在重庆待过几年，想必九江的夏天我是能够挺过去的。在九江未能见着雪，但是令我挺遗憾的，倒是九江的雨与九江的风并未令我失望，想必我能够记着许久了<br>随笔</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>心情随笔</title>
+      <link href="/2021/02/02/ckknq3s7p00008rus87p34tk2/"/>
+      <url>/2021/02/02/ckknq3s7p00008rus87p34tk2/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>曾听过这么一句话，“你之于我在机场等一艘船罢了！”。这般语录倒是挺适合我的，或是我个人缘由，便是喜爱幻想，幻想一场浪漫的恋情，幻想一次轰烈的人生，幻想一个温馨的家庭……我便是喜爱幻想，也爱瞎猜，我本人对感情这一面，本就一无所知，更不谈对自己有着足够的自信了，遇着喜爱这人，便是远远望去，似乎也就足够了。虽不知怎样定义喜欢，我倒认为便是望着她嘴角上扬，就足够了吧；便是望着她与其他人嬉戏，心中有所不喜吧；便是望着她会紧张不知所措，便是了吧。 —-2020.12.16</p><hr><p>最近几日都非常高兴，嘴角常常不自觉的微微扬起，就连做梦也是幸福的。 —2021.2.2</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>安装Ubuntu的几十次坑的经验</title>
       <link href="/2020/10/06/ckgey3ccw000v9wvodnbqcd3t/"/>
       <url>/2020/10/06/ckgey3ccw000v9wvodnbqcd3t/</url>
@@ -12,6 +93,8 @@
       
       
       <categories>
+          
+          <category> 技术 </category>
           
           <category> Linux </category>
           
@@ -40,9 +123,9 @@
       
       <categories>
           
-          <category> Windows </category>
+          <category> 技术 </category>
           
-          <category> Linux </category>
+          <category> win </category>
           
       </categories>
       
@@ -60,6 +143,8 @@
       
       
       <categories>
+          
+          <category> 技术 </category>
           
           <category> Linux </category>
           
@@ -90,6 +175,8 @@
       
       <categories>
           
+          <category> 技术 </category>
+          
           <category> Linux </category>
           
       </categories>
@@ -118,6 +205,8 @@
       
       
       <categories>
+          
+          <category> 技术 </category>
           
           <category> Linux </category>
           
@@ -148,6 +237,8 @@
       
       <categories>
           
+          <category> 技术 </category>
+          
           <category> Linux </category>
           
       </categories>
@@ -177,6 +268,8 @@
       
       <categories>
           
+          <category> 技术 </category>
+          
           <category> Linux </category>
           
       </categories>
@@ -203,6 +296,8 @@
       
       
       <categories>
+          
+          <category> 技术 </category>
           
           <category> Linux </category>
           
@@ -233,6 +328,8 @@
       
       <categories>
           
+          <category> 技术 </category>
+          
           <category> Linux </category>
           
       </categories>
@@ -262,6 +359,8 @@
       
       <categories>
           
+          <category> 技术 </category>
+          
           <category> Linux </category>
           
       </categories>
@@ -290,6 +389,8 @@
       
       
       <categories>
+          
+          <category> 技术 </category>
           
           <category> Linux </category>
           
@@ -322,6 +423,8 @@
       
       <categories>
           
+          <category> 技术 </category>
+          
           <category> Linux </category>
           
       </categories>
@@ -350,6 +453,8 @@
       
       
       <categories>
+          
+          <category> 技术 </category>
           
           <category> Linux </category>
           
@@ -380,7 +485,9 @@
       
       <categories>
           
-          <category> 编辑器 </category>
+          <category> 技术 </category>
+          
+          <category> Linux </category>
           
       </categories>
       
